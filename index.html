@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Self-Knowledge Plan | Vogue Inspired</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-font: 'Bodoni Moda', serif;
+            --sans-font: 'Montserrat', sans-serif;
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --accent-color: #7f7f7f;
+            --light-gray: #f9f9f9;
+            --border-color: #e5e5e5;
+            --btn-bg: #111111;
+            --btn-text: #ffffff;
+        }
+
+        /* Variables para el Modo Oscuro */
+        [data-theme="dark"] {
+            --bg-color: #0b0b0b;
+            --text-color: #f5f5f5;
+            --accent-color: #999999;
+            --light-gray: #161616;
+            --border-color: #262626;
+            --btn-bg: #ffffff;
+            --btn-text: #111111;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Contenedor del Botón de Modo Oscuro en la parte superior derecha */
+        .theme-toggle-container {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: 1px solid var(--text-color);
+            font-family: var(--sans-font);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Cabecera estilo revista de moda */
+        header {
+            text-align: center;
+            border-bottom: 1px solid var(--text-color);
+            padding: 4rem 1rem 1.5rem 1rem;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            transition: border-color 0.4s ease;
+        }
+
+        .brand-logo {
+            font-family: var(--primary-font);
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .subtitle {
+            font-family: var(--sans-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            color: var(--accent-color);
+        }
+
+        .meta-bar {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0.5rem auto 0 auto;
+            padding: 0.5rem 1rem 0 1rem;
+            font-size: 0.7rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            transition: border-color 0.4s ease;
+        }
+
+        /* Contenedor principal */
+        main {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-editorial {
+            font-family: var(--primary-font);
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 5rem;
+        }
+
+        /* Estructura de las Estrategias */
+        .strategy-article {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4rem;
+            transition: border-color 0.4s ease;
+        }
+
+        .strategy-article:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .strategy-header {
+            font-family: var(--primary-font);
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0 0 1.5rem 0;
+            text-transform: capitalize;
+        }
+
+        .strategy-header span {
+            font-family: var(--sans-font);
+            font-size: 0.85rem;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .strategy-body {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* Bloque destacado para la técnica japonesa */
+        .zen-quote {
+            font-family: var(--primary-font);
+            font-size: 1.15rem;
+            font-style: italic;
+            margin: 2rem 0 0 0;
+            padding: 1.5rem 2rem;
+            background-color: var(--light-gray);
+            border-left: 2px solid var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.4s ease, border-color 0.4s ease;
+        }
+
+        .zen-quote strong {
+            font-family: var(--sans-font);
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pie de página */
+        footer {
+            border-top: 1px solid var(--text-color);
+            max-width: 1200px;
+            margin: 6rem auto 0 auto;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: border-color 0.4s ease;
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .brand-logo { font-size: 2.5rem; }
+            .strategy-header { font-size: 1.8rem; }
+            .intro-editorial { font-size: 1.2rem; }
+            .theme-toggle-container { top: 1rem; right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-toggle-container">
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">Modo Oscuro</button>
+    </div>
+
+    <header>
+        <h1 class="brand-logo">L'Équilibre</h1>
+        <div class="subtitle">El Arte del Autoconocimiento Humano</div>
+    </header>
+    <div class="meta-bar">
+        <span>Edición Especial</span>
+        <span>Plan de 2 Semanas</span>
+        <span>Mindfulness & Ser</span>
+    </div>
+
+    <main>
+        <p class="intro-editorial">
+            "Comprender los propios estados emocionales internos es el pilar fundamental de la inteligencia emocional. Un viaje de catorce días hacia el control de los impulsos y la conciencia plena."
+        </p>
+
+        <article class="strategy-article">
+            <span class="timeline-tag">Días 1 — 14 • Continuo</span>
+            <h2 class="strategy-header"><span>01 / Registro</span>El Diario Emocional</h2>
+            <p class="strategy-body">
+                La observación rigurosa requiere constancia. Registre a diario sus estados emocionales más intensos, aislando con precisión qué estímulo detonó la reacción y cómo respondió su cuerpo. Identificar estos patrones repetitivos es la clave para descifrar su comportamiento inconsciente.
+            </p>
+        </article>
+
+        <article class="strategy-article">
+            <span class="timeline-tag">Días 1 — 7 • Semana I</span>
+            <h2 class="strategy-header"><span>02 / Examen</span>Autoevaluación Consciente</h2>
+            <p class="strategy-body">
+                Al caer la noche, dedique diez minutos a un examen desprovisto de juicios destructivos. Analice sus decisiones diarias bajo una luz analítica: identifique en qué momentos mantuvo la templanza y en qué escenarios cedió ante la volatilidad de sus impulsos, comprendiendo el porqué detrás de cada acto.
+            </p>
+        </article>
+
+        <article class="strategy-article">
+            <span class="timeline-tag">Días 4 — 8 • Transición</span>
+            <h2 class="strategy-header"><span>03 / Análisis</span>Cartografía de Desencadenantes</h2>
+            <p class="strategy-body">
+                Diseñe un mapa mental de sus puntos de quiebre. Identifique situaciones, palabras exactas o atmósferas específicas que vulneran su paciencia o detonan ansiedad. Reconocer con exactitud estos desencadenantes emocionales es el paso analítico previo para una autorregulación elegante.
+            </p>
+        </article>
+
+        <article class="strategy-article">
+            <span class="timeline-tag">Días 8 — 12 • Semana II</span>
+            <h2 class="strategy-header"><span>04 / Perspectiva</span>Reflexión de Impacto Diario</h2>
+            <p class="strategy-body">
+                Reserve un espacio de absoluto silencio para procesar la interacción con su entorno. Aprenda a trazar una línea divisoria nítida entre las acciones ajenas y su propia respuesta interna. La madurez emocional radica en comprender que los actos de los demás no dictan su paz mental.
+            </p>
+        </article>
+
+        <article class="strategy-article">
+            <span class="timeline-tag">Días 10 — 14 • El Cierre</span>
+            <h2 class="strategy-header"><span>05 / Meditación</span>El Silencio Japonés: Zazen y Meiso</h2>
+            <p class="strategy-body">
+                Adopte la postura tradicional <strong>Zazen</strong>: siéntese en quietud absoluta con la columna alineada y la mirada sutilmente posada en el suelo[cite: 16]. A través del <strong>Meiso</strong>, dirija su respiración de manera exclusiva hacia el <em>Tanden</em> (el centro de gravedad situado bajo el ombligo)[cite: 16]. Contemple sus pensamientos surgir y desvanecerse en la periferia de su mente, entrenando al cerebro para percibir sus emociones sin la necesidad imperativa de reaccionar ante ellas[cite: 16].
+            </p>
+            <div class="zen-quote">
+                <strong>Filosofía Zen aplicada</strong>
+                "Esta milenaria disciplina estética enseña a observar los flujos del ego de manera neutral, facilitando un dominio absoluto sobre la autorregulación y la calma." [cite: 19]
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 L'Équilibre Magazine. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.documentElement;
+            const currentTheme = body.getAttribute('data-theme');
+            const button = document.getElementById('themeToggle');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                button.textContent = 'Modo Oscuro';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                button.textContent = 'Modo Claro';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Detectar si el usuario ya tenía configurado el modo oscuro anteriormente
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const button = document.getElementById('themeToggle');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                button.textContent = 'Modo Claro';
+            }
+        });
+    </script>
+
+</body>
+</html>
