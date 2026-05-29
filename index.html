@@ -102,4 +102,287 @@
             border: 1px solid var(--border-color);
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(44, 3
+            box-shadow: 0 10px 30px rgba(44, 37, 32, 0.02);
+        }
+
+        /* Imágenes estilo Acuarela */
+        .watercolor-box {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--light-gray);
+        }
+
+        .watercolor-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(0.95) saturate(0.85);
+            opacity: 0.95;
+        }
+
+        /* Contenedor del Texto Interno */
+        .strategy-content {
+            padding: 3.5rem;
+        }
+
+        .timeline-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #948275;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .strategy-header {
+            font-family: var(--primary-font);
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0 0 2rem 0;
+            color: var(--text-color);
+        }
+
+        .strategy-header span {
+            font-family: var(--sans-font);
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
+        }
+
+        .strategy-body {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-weight: 300;
+            color: #423831;
+            text-align: justify;
+        }
+
+        /* Bloques de Desarrollo Profundo */
+        .development-block {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .development-block h4 {
+            font-family: var(--sans-font);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 1rem 0;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .development-block ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .development-block li {
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #54473e;
+        }
+
+        /* Bloque destacado Zen */
+        .zen-quote {
+            font-family: var(--primary-font);
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 2.5rem 0 0 0;
+            padding: 2rem;
+            background-color: var(--light-gray);
+            border-left: 3px solid var(--accent-color);
+            line-height: 1.7;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .zen-quote strong {
+            font-family: var(--sans-font);
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #70655e;
+        }
+
+        /* Pie de página */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 8rem;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8c7e74;
+            margin: 0;
+        }
+
+        /* Ajustes de Responsividad */
+        @media (max-width: 768px) {
+            .brand-logo { font-size: 2.8rem; }
+            .strategy-header { font-size: 1.8rem; }
+            .strategy-content { padding: 2rem; }
+            .watercolor-box { height: 250px; }
+            .meta-bar { flex-direction: column; gap: 0.5rem; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header id="mainHeader">
+            <h1 class="brand-logo">Crecimiento Socioemocional</h1>
+            <div class="subtitle">Manual de Exploración e Inteligencia Emocional</div>
+            <div class="meta-bar">
+                <span>Iniciación a la Conciencia</span>
+                <span>•</span>
+                <span>Un Reto de 14 Días</span>
+            </div>
+        </header>
+
+        <main>
+            <p class="intro-editorial">
+                "El autoconocimiento es el arte de habitarse por dentro. No se trata de cambiar quién es, sino de levantar los velos de la rutina para observar, con absoluta nitidez y compasión, la naturaleza real de sus flujos internos."
+            </p>
+
+            <article class="strategy-article">
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Escritura y Diario">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 1 — 14 • Práctica Continua</span>
+                    <h2 class="strategy-header"><span>Estrategia 01</span>El Diario Emocional Metódico</h2>
+                    <p class="strategy-body">
+                        La mente olvida rápidamente las tormentas pasadas, diluyendo los patrones de conducta inconscientes. El registro escrito actúa como un espejo inalterable. No busque hacer literatura; busque capturar con honestidad quirúrgica los momentos donde su equilibrio interno se fracturó. Al mapear estas fluctuaciones, descubrirá que sus reacciones no son caóticas, sino que responden a un guion que lleva años repitiendo.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Guía Práctica de Implementación</h4>
+                        <ul>
+                            <li><strong>El Registro Directo:</strong> Escriba inmediatamente después de notar un cambio físico (presión en el pecho, mandíbula rígida, aceleración cardíaca).</li>
+                            <li><strong>Aislamiento del Estímulo:</strong> Identifique el detonante real. Diferencie entre el evento objetivo ("un correo de mi jefe") y su interpretación interna ("creo que me van a despedir").</li>
+                            <li><strong>Análisis Semanal:</strong> Cada domingo revise las notas del diario buscando palabras recurrentes (como "frustración", "invisibilidad", "control") para descifrar su vulnerabilidad principal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="strategy-article">
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Introspección Nocturna">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 1 — 7 • Semana I</span>
+                    <h2 class="strategy-header"><span>Estrategia 02</span>Autoevaluación Consciente Nocturna</h2>
+                    <p class="strategy-body">
+                        Vivimos en un estado de reacción constante hacia el exterior, lo que nos desconecta de nuestra responsabilidad interna. La autoevaluación nocturna propone un tribunal sin jueces: una revisión calmada del día antes de dormir. Su propósito no es castigarse por los errores cometidos, sino entender qué dinámicas psicológicas adoptó frente a los desafíos cotidianos.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>El Ejercicio de los Tres Espejos</h4>
+                        <ul>
+                            <li><strong>Espejo de la Templanza:</strong> ¿En qué momentos específicos del día logré mantener la calma y responder con claridad en lugar de reaccionar impulsivamente?</li>
+                            <li><strong>Espejo de la Vulnerabilidad:</strong> ¿Dónde cedí el control de mis emociones al entorno o a las palabras de un tercero? ¿Qué estaba protegiendo mi ego en ese instante?</li>
+                            <li><strong>Espejo de la Intención:</strong> Mañana, ante un escenario similar, ¿cómo elegirá responder mi versión consciente? Visualice esa respuesta durante dos minutos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="strategy-article">
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1541689224446-d1fa1c464a7d?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Mapas Mentales">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 4 — 8 • Fase de Transición</span>
+                    <h2 class="strategy-header"><span>Estrategia 03</span>Cartografía de Desencadenantes Mentales</h2>
+                    <p class="strategy-body">
+                        Un desencadenante es una herida del pasado que no ha sanado y reacciona al presente. Si una simple crítica apaga su motivación o un retraso logístico le genera ira desmedida, usted no está reaccionando a la situación real, sino a lo que esa situación representa en su historia personal. Cartografiar estos puntos es crear un sistema de alerta temprana.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Estructuración del Mapa de Quiebre</h4>
+                        <ul>
+                            <li><strong>Identificar las Palabras Clave:</strong> Note qué frases ajenas desactivan su raciocinio ("tienes que", "siempre haces lo mismo", "no eres capaz").</li>
+                            <li><strong>Rastrear el Origen:</strong> Pregúntese con curiosidad: ¿Cuándo fue la primera vez en mi vida que me sentí exactamente de esta manera? Conecte su reacción actual con su pasado.</li>
+                            <li><strong>El Cortocircuito:</strong> En el momento en que un detonante se active, use la regla de los 5 segundos: respire profundamente antes de emitir cualquier palabra, interrumpiendo el impulso automático del cerebro.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="strategy-article">
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Naturaleza y Equilibrio">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 8 — 12 • Semana II</span>
+                    <h2 class="strategy-header"><span>Estrategia 04</span>Reflexión de Impacto Diario</h2>
+                    <p class="strategy-body">
+                        Sostenemos la creencia inconsciente de que somos responsables de cómo actúan los demás, o peor aún, que sus conductas son un reflejo de nuestro valor. La reflexión de impacto diario es un ejercicio de demarcación territorial psicológica. Su meta es aprender a separar con nitidez quirúrgica los eventos externos de su bienestar interior, entendiendo que el comportamiento ajeno pertenece exclusivamente al proceso de la otra persona.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>El Filtro de la Soberanía Emocional</h4>
+                        <ul>
+                            <li><strong>Delimitación:</strong> Ante un conflicto, repítase mentalmente: "Su comportamiento define su realidad; mi respuesta define la mía".</li>
+                            <li><strong>Descompresión Temporal:</strong> Al mediodía, tómese 3 minutos de aislamiento total. Cierre los ojos y limpie el ruido acumulado en las interacciones previas.</li>
+                            <li><strong>Evaluación de Carga:</strong> Al terminar el día, suelte las tensiones que no le pertenezcan. No cargue con las frustraciones, malas respuestas o exigencias neuróticas de su entorno.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="strategy-article">
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Meditación y Piedras Zen">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 10 — 14 • Integración Final</span>
+                    <h2 class="strategy-header"><span>Estrategia 05</span>El Silencio Japonés: Zazen y Meiso</h2>
+                    <p class="strategy-body">
+                        La última frontera del autoconocimiento no se encuentra en el pensamiento analítico, sino en el cese del mismo. Las disciplinas orientales tradicionales entienden que la mente es como un estanque de agua agitada: si intenta calmarla con las manos (pensando más), solo generará más ondas. La quietud radical revela el fondo del estanque. A través de la postura física y el control respiratorio, el ego se silencia temporalmente, permitiendo que la conciencia pura emerja.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Práctica de Meditación Zen</h4>
+                        <ul>
+                            <li><strong>Postura Zazen:</strong> Siéntese firmemente en una silla o cojín. Mantenga la columna perfectamente erguida, los hombros relajados y la barbilla sutilmente recogida. Mantenga los ojos semicerrados, posando la mirada de forma suave en un punto fijo en el suelo a un metro de distancia.</li>
+                            <li><strong>Respiración Meiso:</strong> No controle el aire de forma artificial; dirija toda su atención al bajo vientre (el centro energético <em>Tanden</em>). Sienta cómo se expande y se contrae de forma orgánica con cada ciclo.</li>
+                            <li><strong>Observación Neutral:</strong> Los pensamientos aparecerán (pendientes, recuerdos, juicios). No se enganche a ellos ni intente expulsarlos. Véalos como nubes que cruzan el cielo de su mente y regrese suavemente su atención al ritmo de su abdomen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="zen-quote">
+                        <strong>Filosofía Aplicada</strong>
+                        "Sentarse en Zazen no es un método para adquirir paz; es la manifestación misma de su naturaleza original, imperturbable y libre de las fluctuaciones del apego emocional."
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Crecimiento Socioemocional Studio. Desarrollo Integral Humano.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
