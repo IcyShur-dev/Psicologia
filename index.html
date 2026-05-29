@@ -3,182 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Self-Knowledge Plan | Multi-Theme Suite</title>
+    <title>L'Équilibre — Plan de Autoconocimiento Profundo</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ==========================================================================
-           1. ESTILOS DEL LOBBY / SELECTOR (Permanente en la parte superior)
-           ========================================================================== */
-        .lobby-panel {
-            background-color: #111111;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            border-bottom: 2px solid #333333;
-            box-sizing: border-box;
-            width: 100%;
-        }
-
-        .lobby-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .lobby-title span {
-            color: #00bcff; /* Detalle tecnológico */
-            font-style: italic;
-        }
-
-        .theme-selector-area {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .selector-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #aaaaaa;
-        }
-
-        .theme-select-dropdown {
-            background-color: #222222;
-            color: #ffffff;
-            border: 1px solid #444444;
-            padding: 0.5rem 1rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .theme-select-dropdown:hover {
-            border-color: #00bcff;
-        }
-
-        /* Contenedor del Botón de Modo Oscuro */
-        .theme-toggle-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .theme-btn {
-            background-color: #ffffff;
-            color: #111111;
-            border: 1px solid transparent;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 0.6rem 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .theme-btn:hover {
-            opacity: 0.9;
-        }
-
-
-        /* ==========================================================================
-           2. CONFIGURACIÓN DE ATRIBUTOS DINÁMICOS (TEMAS GENERALES)
-           ========================================================================== */
-        
-        /* --- TEMA 1: VOGUE (DEFAULT) --- */
-        body[data-style="vogue"] {
-            --primary-font: 'Bodoni Moda', serif;
-            --sans-font: 'Montserrat', sans-serif;
-            --bg-color: #ffffff;
-            --text-color: #111111;
-            --accent-color: #7f7f7f;
-            --card-bg: #ffffff;
-            --light-gray: #f9f9f9;
-            --border-color: #e5e5e5;
-            --border-style: 1px solid var(--border-color);
-            --card-radius: 0px;
-            --shadow: none;
-            --alignment: justify;
-        }
-        body[data-style="vogue"][data-theme="dark"] {
-            --bg-color: #0b0b0b;
-            --text-color: #f5f5f5;
-            --accent-color: #999999;
-            --card-bg: #0b0b0b;
-            --light-gray: #161616;
-            --border-color: #262626;
-        }
-
-        /* --- TEMA 2: ARQUITECTURA MEDITERRÁNEA --- */
-        body[data-style="mediterranean"] {
+        /* Variables de diseño de la marca (Estilo Orgánico/Cálido) */
+        :root {
             --primary-font: 'Playfair Display', serif;
             --sans-font: 'Inter', sans-serif;
-            --bg-color: #f7f4f0; /* Color Arena / Lino */
-            --text-color: #2c2520; /* Tierra Oscuro */
-            --accent-color: #a98467; /* Terracota / Madera suave */
+            --bg-color: #fcfbfa;       /* Fondo lino / lienzo suave */
+            --text-color: #2c2520;     /* Tierra oscuro para lectura óptima */
+            --accent-color: #bfa38f;   /* Tono acuarela / arena tostada */
             --card-bg: #ffffff;
-            --light-gray: #f1ede6;
-            --border-color: #e6dfd5;
-            --border-style: 1px solid var(--border-color);
-            --card-radius: 4px;
-            --shadow: 0 4px 20px rgba(44, 37, 32, 0.04);
-            --alignment: left;
-        }
-        body[data-style="mediterranean"][data-theme="dark"] {
-            --bg-color: #1a1613;
-            --text-color: #f3ece3;
-            --accent-color: #ddb892;
-            --card-bg: #231f1b;
-            --light-gray: #2d2722;
-            --border-color: #3a322b;
+            --light-gray: #f5f2eb;
+            --border-color: #ebdcd0;
+            --max-width: 800px;
         }
 
-        /* --- TEMA 3: FORTNITE HELP CENTER --- */
-        body[data-style="fortnite"] {
-            --primary-font: 'Montserrat', sans-serif;
-            --sans-font: 'Montserrat', sans-serif;
-            --bg-color: #f8f9fa;
-            --text-color: #202224;
-            --accent-color: #007bff; /* Azul Epic */
-            --card-bg: #ffffff;
-            --light-gray: #e9ecef;
-            --border-color: #dae0e5;
-            --border-style: 1px solid var(--border-color);
-            --card-radius: 16px; /* Bordes muy redondeados gaming */
-            --shadow: 0 2px 8px rgba(0,0,0,0.06);
-            --alignment: left;
-        }
-        body[data-style="fortnite"][data-theme="dark"] {
-            --bg-color: #12161a; /* Gris azulado oscuro */
-            --text-color: #ffffff;
-            --accent-color: #00bcff; /* Cian eléctrico */
-            --card-bg: #1c2229;
-            --light-gray: #26313c;
-            --border-color: #2d3844;
-            --shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        /* ==========================================================================
-           3. ESTILOS CORE DE LA ESTRUCTURA DE LA PÁGINA
-           ========================================================================== */
+        /* Configuración Global */
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -187,7 +32,6 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
-            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         .main-wrapper {
@@ -196,142 +40,171 @@
             padding: 0 1.5rem;
         }
 
-        /* Elementos Dinámicos de Cabecera */
+        /* Cabecera Editorial */
         header {
             text-align: center;
-            padding: 4rem 1rem 1.5rem 1rem;
-            margin-top: 1rem;
-            transition: all 0.4s ease;
+            padding: 6rem 1rem 3rem 1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
         }
-        body[data-style="vogue"] header { border-bottom: 1px solid var(--text-color); }
-        body[data-style="mediterranean"] header { border-bottom: 2px solid var(--accent-color); max-width: 600px; }
-        body[data-style="fortnite"] header { background-color: var(--card-bg); border: var(--border-style); border-radius: var(--card-radius); box-shadow: var(--shadow); }
 
         .brand-logo {
             font-family: var(--primary-font);
-            font-size: 3.5rem;
-            font-weight: 900;
-            letter-spacing: 4px;
-            text-transform: uppercase;
+            font-size: 3.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: capitalize;
             margin: 0;
-            line-height: 1;
-            transition: all 0.3s ease;
+            line-height: 1.1;
         }
-        body[data-style="vogue"] .brand-logo { font-weight: 900; }
-        body[data-style="mediterranean"] .brand-logo { font-weight: 300; text-transform: capitalize; letter-spacing: 1px; color: var(--text-color); }
-        body[data-style="fortnite"] .brand-logo { font-weight: 800; letter-spacing: -1px; text-transform: uppercase; font-style: italic; color: var(--accent-color); }
 
         .subtitle {
-            font-family: var(--sans-font);
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 500;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-top: 1rem;
-            color: var(--accent-color);
+            margin-top: 1.5rem;
+            color: #70655e;
         }
-        body[data-style="fortnite"] .subtitle { font-weight: 400; letter-spacing: 0px; text-transform: none; font-size: 0.95rem; opacity: 0.8; color: var(--text-color); }
 
         .meta-bar {
             display: flex;
-            justify-content: space-between;
-            margin: 0.5rem auto 0 auto;
-            padding: 0.5rem 1rem 0 1rem;
-            font-size: 0.7rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-color);
-            border-top: 1px solid var(--border-color);
-            transition: all 0.4s ease;
+            justify-content: center;
+            gap: 3rem;
+            margin: 1.5rem auto 0 auto;
+            font-family: var(--primary-font);
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #8c7e74;
         }
-        body[data-style="mediterranean"] .meta-bar { justify-content: center; gap: 2rem; border: none; font-family: var(--primary-font); font-style: italic; text-transform: none; font-size: 0.9rem; }
-        body[data-style="fortnite"] .meta-bar { display: none; } /* Fortnite no usa metadata editorial */
 
-        /* Cuerpo de Contenido */
+        /* Contenido Principal */
         main {
-            max-width: 800px;
-            margin: 4rem auto;
+            max-width: var(--max-width);
+            margin: 5rem auto;
         }
 
         .intro-editorial {
             font-family: var(--primary-font);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-style: italic;
             text-align: center;
-            line-height: 1.8;
-            margin-bottom: 5rem;
-            transition: all 0.4s ease;
+            line-height: 1.9;
+            margin-bottom: 6rem;
+            color: #4a3e36;
         }
-        body[data-style="fortnite"] .intro-editorial { font-family: var(--sans-font); font-style: normal; font-size: 1.1rem; text-align: left; background-color: var(--light-gray); padding: 1.5rem; border-radius: var(--card-radius); border-left: 6px solid var(--accent-color); margin-bottom: 3rem; }
 
-        /* Estructura de las Tarjetas/Artículos */
+        /* Estructura de Estrategias y Artículos */
         .strategy-article {
-            margin-bottom: 5rem;
-            padding-bottom: 4rem;
+            margin-bottom: 7rem;
             background-color: var(--card-bg);
-            box-shadow: var(--shadow);
-            border-bottom: var(--border-style);
-            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(44, 37, 32, 0.02);
         }
-        body[data-style="mediterranean"] .strategy-article { padding: 2.5rem; margin-bottom: 3rem; border-radius: var(--card-radius); border: var(--border-style); }
-        body[data-style="fortnite"] .strategy-article { padding: 2rem; margin-bottom: 2rem; border-radius: var(--card-radius); border: var(--border-style); border-bottom: 4px solid var(--border-color); }
-        body[data-style="fortnite"] .strategy-article:hover { border-color: var(--accent-color); }
+
+        /* Imágenes estilo Acuarela */
+        .watercolor-box {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--light-gray);
+        }
+
+        .watercolor-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: multiply(1.1) contrast(0.95) saturate(0.85);
+            opacity: 0.95;
+        }
+
+        /* Contenedor del Texto Interno */
+        .strategy-content {
+            padding: 3.5rem;
+        }
 
         .timeline-tag {
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            color: #948275;
+            margin-bottom: 0.8rem;
             display: block;
         }
-        body[data-style="fortnite"] .timeline-tag { background-color: var(--light-gray); display: inline-block; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0px; }
 
         .strategy-header {
             font-family: var(--primary-font);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 400;
             line-height: 1.2;
-            margin: 0 0 1.5rem 0;
-            text-transform: capitalize;
+            margin: 0 0 2rem 0;
+            color: var(--text-color);
         }
-        body[data-style="fortnite"] .strategy-header { font-weight: 800; font-size: 1.6rem; text-transform: none; margin-top: 0.5rem; }
 
         .strategy-header span {
             font-family: var(--sans-font);
-            font-size: 0.85rem;
-            font-weight: 300;
-            display: block;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 400;
             color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
         }
-        body[data-style="fortnite"] .strategy-header span { display: inline; font-size: 1.6rem; font-weight: 800; color: var(--accent-color); margin-right: 0.5rem; }
 
         .strategy-body {
-            font-size: 0.95rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.9;
             font-weight: 300;
-            text-align: var(--alignment);
+            color: #423831;
+            text-align: justify;
         }
-        body[data-style="mediterranean"] .strategy-body { font-size: 1rem; color: #4a413a; }
-        body[data-style="fortnite"] .strategy-body { font-size: 0.95rem; font-weight: 400; opacity: 0.9; }
+
+        /* Bloques de Desarrollo Profundo */
+        .development-block {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .development-block h4 {
+            font-family: var(--sans-font);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 1rem 0;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .development-block ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .development-block li {
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #54473e;
+        }
 
         /* Bloque destacado Zen */
         .zen-quote {
             font-family: var(--primary-font);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-style: italic;
-            margin: 2rem 0 0 0;
-            padding: 1.5rem 2rem;
+            margin: 2.5rem 0 0 0;
+            padding: 2rem;
             background-color: var(--light-gray);
-            border-left: 2px solid var(--text-color);
-            line-height: 1.6;
-            transition: all 0.4s ease;
+            border-left: 3px solid var(--accent-color);
+            line-height: 1.7;
+            border-radius: 0 8px 8px 0;
         }
-        body[data-style="mediterranean"] .zen-quote { font-family: var(--primary-font); border-left: 2px solid var(--accent-color); background-color: var(--light-gray); border-radius: 0 8px 8px 0; }
-        body[data-style="fortnite"] .zen-quote { font-family: var(--sans-font); font-style: normal; font-size: 0.9rem; border-left: 4px solid var(--accent-color); background-color: var(--light-gray); border-radius: 8px; }
 
         .zen-quote strong {
             font-family: var(--sans-font);
@@ -339,195 +212,177 @@
             font-style: normal;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: #70655e;
         }
-        body[data-style="fortnite"] .zen-quote strong { color: var(--accent-color); font-weight: 800; }
 
         /* Pie de página */
         footer {
-            border-top: 1px solid var(--text-color);
-            padding: 2rem 1rem;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1rem;
             text-align: center;
-            margin-top: 6rem;
-            transition: all 0.4s ease;
+            margin-top: 8rem;
         }
-        body[data-style="mediterranean"] footer { border-top: 1px dashed var(--border-color); }
-        body[data-style="fortnite"] footer { background-color: #12161a; color: #ffffff; border: none; margin-top: 4rem; }
 
         footer p {
-            font-size: 0.7rem;
-            font-weight: 400;
+            font-size: 0.75rem;
+            font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent-color);
+            color: #8c7e74;
             margin: 0;
         }
 
-        /* Responsividad */
+        /* Ajustes de Responsividad */
         @media (max-width: 768px) {
-            .brand-logo { font-size: 2.2rem; }
-            .strategy-header { font-size: 1.6rem; }
-            .intro-editorial { font-size: 1.1rem; }
-            .lobby-panel { flex-direction: column; text-align: center; }
+            .brand-logo { font-size: 2.8rem; }
+            .strategy-header { font-size: 1.8rem; }
+            .strategy-content { padding: 2rem; }
+            .watercolor-box { height: 250px; }
+            .meta-bar { flex-direction: column; gap: 0.5rem; align-items: center; }
         }
     </style>
 </head>
-<body data-style="vogue"> <div class="lobby-panel">
-        <h2 class="lobby-title">L'Équilibre — <span>Lobby Estilos</span></h2>
-        
-        <div class="theme-selector-area">
-            <span class="selector-label">Diseño:</span>
-            <select class="theme-select-dropdown" id="styleSelector" onchange="changeStyle(this.value)">
-                <option value="vogue">1. L'Équilibre (Estilo Vogue)</option>
-                <option value="mediterranean">2. Arq. Mediterrània</option>
-                <option value="fortnite">3. Fortnite (Help Center)</option>
-            </select>
-        </div>
-
-        <div class="theme-toggle-container">
-            <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">Modo Oscuro</button>
-        </div>
-    </div>
+<body>
 
     <div class="main-wrapper">
         <header id="mainHeader">
-            <h1 class="brand-logo" id="brandLogo">L'Équilibre</h1>
-            <div class="subtitle" id="brandSubtitle">El Arte del Autoconocimiento Humano</div>
+            <h1 class="brand-logo">Arquitectura de la Mente</h1>
+            <div class="subtitle">Manual de Exploración e Inteligencia Emocional</div>
+            <div class="meta-bar">
+                <span>Iniciación a la Conciencia</span>
+                <span>•</span>
+                <span>Un Reto de 14 Días</span>
+            </div>
         </header>
-        
-        <div class="meta-bar" id="metaBar">
-            <span>Edición Especial</span>
-            <span>Plan de 2 Semanas</span>
-            <span>Mindfulness & Ser</span>
-        </div>
 
         <main>
-            <p class="intro-editorial" id="introText">
-                "Comprender los propios estados emocionales internos es el pilar fundamental de la inteligencia emocional. Un viaje de catorce días hacia el control de los impulsos y la conciencia plena." [cite: 74, 94]
+            <p class="intro-editorial">
+                "El autoconocimiento es el arte de habitarse por dentro. No se trata de cambiar quién es, sino de levantar los velos de la rutina para observar, con absoluta nitidez y compasión, la naturaleza real de sus flujos internos."
             </p>
 
             <article class="strategy-article">
-                <span class="timeline-tag">Días 1 — 14 • Continuo</span>
-                <h2 class="strategy-header"><span class="str-num">01 / </span>El Diario Emocional</h2>
-                <p class="strategy-body">
-                    La observación rigurosa requiere constancia. Registre a diario sus estados emocionales más intensos, aislando con precisión qué estímulo detonó la reacción y cómo respondió su cuerpo. Identificar estos patrones repetitivos es la clave para descifrar su comportamiento inconsciente.
-                </p>
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Abstracta">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 1 — 14 • Práctica Continua</span>
+                    <h2 class="strategy-header"><span>Estrategia 01</span>El Diario Emocional Metódico</h2>
+                    <p class="strategy-body">
+                        La mente olvida rápidamente las tormentas pasadas, diluyendo los patrones de conducta inconscientes. El registro escrito actúa como un espejo inalterable. No busque hacer literatura; busque capturar con honestidad quirúrgica los momentos donde su equilibrio interno se fracturó. Al mapear estas fluctuaciones, descubrirá que sus reacciones no son caóticas, sino que responden a un guion que lleva años repitiendo.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Guía Práctica de Implementación</h4>
+                        <ul>
+                            <li><strong>El Registro Directo:</strong> Escriba inmediatamente después de notar un cambio físico (presión en el pecho, mandíbula rígida, aceleración cardíaca).</li>
+                            <li><strong>Aislamiento del Estímulo:</strong> Identifique el detonante real. Diferencie entre el evento objetivo ("un correo de mi jefe") y su interpretación interna ("creo que me van a despedir").</li>
+                            <li><strong>Análisis Semanal:</strong> Cada domingo revise las notas del diario buscando palabras recurrentes (como "frustración", "invisibilidad", "control") para descifrar su vulnerabilidad principal.</li>
+                        </ul>
+                    </div>
+                </div>
             </article>
 
             <article class="strategy-article">
-                <span class="timeline-tag">Días 1 — 7 • Semana I</span>
-                <h2 class="strategy-header"><span class="str-num">02 / </span>Autoevaluación Consciente</h2>
-                <p class="strategy-body">
-                    Al caer la noche, dedique diez minutos a un examen desprovisto de juicios destructivos. Analice sus decisiones diarias bajo una luz analítica: identifique en qué momentos mantuvo la templanza y en qué escenarios cedió ante la volatilidad de sus impulsos, comprendiendo el porqué detrás de cada acto.
-                </p>
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Naturaleza">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 1 — 7 • Semana I</span>
+                    <h2 class="strategy-header"><span>Estrategia 02</span>Autoevaluación Consciente Nocturna</h2>
+                    <p class="strategy-body">
+                        Vivimos en un estado de reacción constante hacia el exterior, lo que nos desconecta de nuestra responsabilidad interna. La autoevaluación nocturna propone un tribunal sin jueces: una revisión calmada del día antes de dormir. Su propósito no es castigarse por los errores cometidos, sino entender qué dinámicas psicológicas adoptó frente a los desafíos cotidianos.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>El Ejercicio de los Tres Espejos</h4>
+                        <ul>
+                            <li><strong>Espejo de la Templanza:</strong> ¿En qué momentos específicos del día logré mantener la calma y responder con claridad en lugar de reaccionar impulsivamente?</li>
+                            <li><strong>Espejo de la Vulnerabilidad:</strong> ¿Dónde cedí el control de mis emociones al entorno o a las palabras de un tercero? ¿Qué estaba protegiendo mi ego en ese instante?</li>
+                            <li><strong>Espejo de la Intención:</strong> Mañana, ante un escenario similar, ¿cómo elegirá responder mi versión consciente? Visualice esa respuesta durante dos minutos.</li>
+                        </ul>
+                    </div>
+                </div>
             </article>
 
             <article class="strategy-article">
-                <span class="timeline-tag">Días 4 — 8 • Transición</span>
-                <h2 class="strategy-header"><span class="str-num">03 / </span>Cartografía de Desencadenantes</h2>
-                <p class="strategy-body">
-                    Diseñe un mapa mental de sus puntos de quiebre. Identifique situaciones, palabras exactas o atmósferas específicas que vulneran su paciencia o detonan ansiedad. Reconocer con exactitud estos desencadenantes emocionales es el paso analítico previo para una autorregulación elegante.
-                </p>
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Fluido">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 4 — 8 • Fase de Transición</span>
+                    <h2 class="strategy-header"><span>Estrategia 03</span>Cartografía de Desencadenantes Mentales</h2>
+                    <p class="strategy-body">
+                        Un desencadenante es una herida del pasado que no ha sanado y reacciona al presente. Si una simple crítica apaga su motivación o un retraso logístico le genera ira desmedida, usted no está reaccionando a la situación real, sino a lo que esa situación representa en su historia personal. Cartografiar estos puntos es crear un sistema de alerta temprana.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Estructuración del Mapa de Quiebre</h4>
+                        <ul>
+                            <li><strong>Identificar las Palabras Clave:</strong> Note qué frases ajenas desactivan su raciocinio ("tienes que", "siempre haces lo mismo", "no eres capaz").</li>
+                            <li><strong>Rastrear el Origen:</strong> Pregúntese con curiosidad: ¿Cuándo fue la primera vez en mi vida que me sentí exactamente de esta manera? Conecte su reacción actual con su pasado.</li>
+                            <li><strong>El Cortocircuito:</strong> En el momento en que un detonante se active, use la regla de los 5 segundos: respire profundamente antes de emitir cualquier palabra, interrumpiendo el impulso automático del cerebro.</li>
+                        </ul>
+                    </div>
+                </div>
             </article>
 
             <article class="strategy-article">
-                <span class="timeline-tag">Días 8 — 12 • Semana II</span>
-                <h2 class="strategy-header"><span class="str-num">04 / </span>Reflexión de Impacto Diario</h2>
-                <p class="strategy-body">
-                    Reserve un espacio de absoluto silencio para procesar la interacción con su entorno. Aprenda a trazar una línea divisoria nítida entre las acciones ajenas y su propia respuesta interna. La madurez emocional radica en comprender que los actos de los demás no dictan su paz mental.
-                </p>
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7edd96c?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Arte">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 8 — 12 • Semana II</span>
+                    <h2 class="strategy-header"><span>Estrategia 04</span>Reflexión de Impacto Diario</h2>
+                    <p class="strategy-body">
+                        Sostenemos la creencia inconsciente de que somos responsables de cómo actúan los demás, o peor aún, que sus conductas son un reflejo de nuestro valor. La reflexión de impacto diario es un ejercicio de demarcación territorial psicológica. Su meta es aprender a separar con nitidez quirúrgica los eventos externos de su bienestar interior, entendiendo que el comportamiento ajeno pertenece exclusivamente al proceso de la otra persona.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>El Filtro de la Soberanía Emocional</h4>
+                        <ul>
+                            <li><strong>Delimitación:</strong> Ante un conflicto, repítase mentalmente: "Su comportamiento define su realidad; mi respuesta define la mía".</li>
+                            <li><strong>Descompresión Temporal:</strong> Al mediodía, tómese 3 minutos de aislamiento total. Cierre los ojos y limpie el ruido acumulado en las interacciones previas.</li>
+                            <li><strong>Evaluación de Carga:</strong> Al terminar el día, suelte las tensiones que no le pertenezcan. No cargue con las frustraciones, malas respuestas o exigencias neuróticas de su entorno.</li>
+                        </ul>
+                    </div>
+                </div>
             </article>
 
             <article class="strategy-article">
-                <span class="timeline-tag">Días 10 — 14 • El Cierre</span>
-                <h2 class="strategy-header"><span class="str-num">05 / </span>El Silencio Japonés: Zazen y Meiso</h2>
-                <p class="strategy-body">
-                    Adopte la postura tradicional <strong>Zazen</strong>: siéntese en quietud absoluta con la columna alineada y la mirada sutilmente posada en el suelo[cite: 90]. A través del <strong>Meiso</strong>, dirija su respiración de manera exclusiva hacia el <em>Tanden</em> (el centro de gravedad situado bajo el ombligo)[cite: 90]. Contemple sus pensamientos surgir y desvanecerse en la periferia de su mente, entrenando al cerebro para percibir sus emociones sin la necesidad imperativa de reaccionar ante ellas.
-                </p>
-                <div class="zen-quote">
-                    <strong>Filosofía Zen aplicada</strong>
-                    "Esta milenaria disciplina estética enseña a observar los flujos del ego de manera neutral, facilitando un dominio absoluto sobre la autorregulación y la calma." [cite: 91]
+                <div class="watercolor-box">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Acuarela Zen">
+                </div>
+                <div class="strategy-content">
+                    <span class="timeline-tag">Días 10 — 14 • Integración Final</span>
+                    <h2 class="strategy-header"><span>Estrategia 05</span>El Silencio Japonés: Zazen y Meiso</h2>
+                    <p class="strategy-body">
+                        La última frontera del autoconocimiento no se encuentra en el pensamiento analítico, sino en el cese del mismo. Las disciplinas orientales tradicionales entienden que la mente es como un estanque de agua agitada: si intenta calmarla con las manos (pensando más), solo generará más ondas. La quietud radical revela el fondo del estanque. A través de la postura física y el control respiratorio, el ego se silencia temporalmente, permitiendo que la conciencia pura emerja.
+                    </p>
+                    
+                    <div class="development-block">
+                        <h4>Práctica de Meditación Zen</h4>
+                        <ul>
+                            <li><strong>Postura Zazen:</strong> Siéntese firmemente en una silla o cojín. Mantenga la columna perfectamente erguida, los hombros relajados y la barbilla sutilmente recogida. Mantenga los ojos semicerrados, posando la mirada de forma suave en un punto fijo en el suelo a un metro de distancia.</li>
+                            <li><strong>Respiración Meiso:</strong> No controle el aire de forma artificial; dirija toda su atención al bajo vientre (el centro energético <em>Tanden</em>). Sienta cómo se expande y se contrae de forma orgánica con cada ciclo.</li>
+                            <li><strong>Observación Neutral:</strong> Los pensamientos aparecerán (pendientes, recuerdos, juicios). No se enganche a ellos ni intente expulsarlos. Véalos como nubes que cruzan el cielo de su mente y regrese suavemente su atención al ritmo de su abdomen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="zen-quote">
+                        <strong>Filosofía Aplicada</strong>
+                        "Sentarse en Zazen no es un método para adquirir paz; es la manifestación misma de su naturaleza original, imperturbable y libre de las fluctuaciones del apego emocional."
+                    </div>
                 </div>
             </article>
         </main>
 
         <footer>
-            <p id="footerText">&copy; 2026 L'Équilibre Magazine. Todos los derechos reservados.</p>
+            <p>&copy; 2026 L'Équilibre Studio. Desarrollo Integral Humano.</p>
         </footer>
     </div>
 
-    <script>
-        // Función para cambiar los estilos de las webs requeridas
-        function changeStyle(styleName) {
-            document.body.setAttribute('data-style', styleName);
-            
-            // Referencias de Elementos de Texto para adaptarlos a las identidades de marca
-            const brandLogo = document.getElementById('brandLogo');
-            const brandSubtitle = document.getElementById('brandSubtitle');
-            const introText = document.getElementById('introText');
-            const footerText = document.getElementById('footerText');
-            const strNums = document.querySelectorAll('.str-num');
-
-            if (styleName === 'vogue') {
-                brandLogo.textContent = "L'Équilibre";
-                brandSubtitle.textContent = "El Arte del Autoconocimiento Humano";
-                introText.textContent = '"Comprender los propios estados emocionales internos es el pilar fundamental de la inteligencia emocional. Un viaje de catorce días hacia el control de los impulsos y la conciencia plena."';
-                footerText.innerHTML = "&copy; 2026 L'Équilibre Magazine. Todos los derechos reservados.";
-                strNums.forEach((num, index) => { num.textContent = `0${index + 1} / `; });
-            } 
-            else if (styleName === 'mediterranean') {
-                brandLogo.textContent = "Arquitectura de la Mente";
-                brandSubtitle.textContent = "Espacios de introspección & calma mediterránea";
-                introText.textContent = "Buscamos la pureza en los materiales internos. El autoconocimiento es como construir una casa frente al mar: requiere bases sólidas, luz natural y un orden orgánico para conectar de nuevo con el alma.";
-                footerText.innerHTML = "&copy; 2026 Estilo Arquitectura Mediterrània. Espacios Orgánicos.";
-                strNums.forEach((num, index) => { num.textContent = `Fase 0${index + 1} — `; });
-            } 
-            else if (styleName === 'fortnite') {
-                brandLogo.textContent = "CENTRO DE AYUDA";
-                brandSubtitle.textContent = "Epic Games Player Support / Misión: Autoconocimiento";
-                introText.textContent = "¿Problemas para gestionar tus impulsos emocionales en la partida? Revisa esta guía oficial de 5 pasos para calibrar tu conciencia interna y subir de nivel tu Inteligencia Emocional.";
-                footerText.innerHTML = "&copy; 2026 Epic Games, Inc. Fortnite Help Center Clone para fines académicos.";
-                strNums.forEach((num, index) => { num.textContent = `SITUACIÓN EN JUEGO #${index + 1}: `; });
-            }
-
-            // Guardar preferencia de diseño
-            localStorage.setItem('selectedStyle', styleName);
-        }
-
-        // Función para cambiar Modo Oscuro / Claro [cite: 100]
-        function toggleTheme() {
-            const body = document.documentElement;
-            const currentTheme = body.getAttribute('data-theme');
-            const button = document.getElementById('themeToggle');
-            
-            if (currentTheme === 'dark') {
-                body.removeAttribute('data-theme');
-                button.textContent = 'Modo Oscuro';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                button.textContent = 'Modo Claro';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Carga y validación inicial de preferencias guardadas
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const button = document.getElementById('themeToggle');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                button.textContent = 'Modo Claro';
-            }
-
-            const savedStyle = localStorage.getItem('selectedStyle');
-            if (savedStyle) {
-                document.getElementById('styleSelector').value = savedStyle;
-                changeStyle(savedStyle);
-            }
-        });
-    </script>
 </body>
 </html>
